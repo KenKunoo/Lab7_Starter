@@ -52,8 +52,8 @@ function initializeServiceWorker() {
     // B3. TODO - Register './sw.js' as a service worker (The MDN article
     //            "Using Service Workers" will help you here)
       try {    
-        const registration = navigator.serviceWorker.register("/sw.js", {
-          scope: "/",
+        const registration = navigator.serviceWorker.register("./sw.js", {
+          scope: "./",
         });
           // B4. TODO - Once the service worker has been successfully registered, console
           //            log that it was successful.
@@ -113,7 +113,7 @@ async function getRecipes() {
           //            article on fetch(). NOTE: Fetches are ASYNCHRONOUS, meaning that
           //            you must either use "await fetch(...)" or "fetch.then(...)". This
           //            function is using the async keyword so we recommend "await"
-            let fetchURL = await fetch(RECIPES_URLS[i]);
+            let fetchURL = await fetch(RECIPE_URLS[i]);
           // A7. TODO - For each fetch response, retrieve the JSON from it using .json().
           //            NOTE: .json() is ALSO asynchronous, so you will need to use
           //            "await" again
